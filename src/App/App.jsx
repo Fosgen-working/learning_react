@@ -6,9 +6,12 @@ import Chats from './app-components/Chats/Chats';
 const App = () => {
   return (
     <div className='app-wrapper'>
-      <Navbar />
-      <Chats />
-    </div>);
+      <div className='app-grid-block'>
+        <Navbar />
+        <Chats />
+      </div>
+    </div>
+  );
 }
 
 export default App;

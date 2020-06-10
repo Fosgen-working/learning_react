@@ -2,4 +2,11 @@
 
 .app-wrapper {
     background-color: $bgColor;
+    width: 100vw;
+    height: 100vh;
+
+    .app-grid-block {
+        width: 100%;
+        height: 100%;
+    }
 }
