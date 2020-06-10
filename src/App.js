@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
-import Navbar from './components/Navbar/Navbar';
-import Profile from './components/Chats/Chats';
+import Navbar from './app-components/Navbar/Navbar';
+import Profile from './app-components/Chats/Chats';
 
 const App = () => {
   return (
