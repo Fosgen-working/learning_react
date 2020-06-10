@@ -6,7 +6,6 @@
     height: 100vh;
 
     .app-grid-block {
-        width: 100%;
         height: 100%;
         display: grid;
         grid-template-areas:
@@ -19,9 +18,11 @@
         }
         .sidebar-grid-block {
             grid-area: sidebar;
+            padding: 30px 0;
         }
         .chat-room-grid-block {
             grid-area: chat;
+            padding: 30px 0;
         }
     }
 }

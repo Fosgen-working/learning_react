@@ -1,3 +1,33 @@
-.content {
-    margin: 30px;
+@import "../../vars";
+
+.Chats {
+    background-color: $bgColor2;
+    border-radius: 5px;
+    height: 100%;
+
+    .sidebar-name {
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        span {
+            color: $white;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        button {
+            width: 50px;
+            height: 40px;
+            border: 2px solid $bgColor2;
+            border-radius: 5px;
+            background-color: $bgColor3;
+            transition: border-color 200ms ease;
+
+            &:hover {
+                border-color: $hoverColor;
+            }
+        }
+    }
 }
