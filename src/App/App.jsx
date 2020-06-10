@@ -1,13 +1,13 @@
 import React from 'react';
-import './App.css';
+import './App.scss';
 import Navbar from './app-components/Navbar/Navbar';
-import Profile from './app-components/Chats/Chats';
+import Chats from './app-components/Chats/Chats';
 
 const App = () => {
   return (
     <div className='app-wrapper'>
       <Navbar />
-      <Profile />
+      <Chats />
     </div>);
 }
 
