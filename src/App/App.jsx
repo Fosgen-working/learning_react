@@ -7,8 +7,15 @@ const App = () => {
   return (
     <div className='app-wrapper'>
       <div className='app-grid-block'>
-        <Navbar />
-        <Chats />
+        <div className='nav-grid-block'>
+          <Navbar />
+        </div>
+        <div className='sidebar-grid-block'>
+          <Chats />
+        </div>
+        <div className='chat-room-grid-block'>
+
+        </div>
       </div>
     </div>
   );

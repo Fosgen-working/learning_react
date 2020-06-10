@@ -8,5 +8,20 @@
     .app-grid-block {
         width: 100%;
         height: 100%;
+        display: grid;
+        grid-template-areas:
+        "nav sidebar chat";
+        grid-template-columns: 70px 350px 1fr;
+        grid-gap: 30px;
+
+        .nav-grid-block {
+            grid-area: nav;
+        }
+        .sidebar-grid-block {
+            grid-area: sidebar;
+        }
+        .chat-room-grid-block {
+            grid-area: chat;
+        }
     }
 }
