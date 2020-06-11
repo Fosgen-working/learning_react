@@ -1,0 +1,66 @@
+@import "../../vars";
+
+.Friends {
+    background-color: $bgColor2;
+    border-radius: 5px;
+    height: 100%;
+    overflow: hidden;
+
+    .sidebar-name {
+        padding: 20px;
+        height: 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        span {
+            color: $white;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        button {
+            width: 50px;
+            height: 40px;
+            border: 2px solid $bgColor2;
+            border-radius: 5px;
+            background-color: $bgColor3;
+            transition: border-color 200ms ease;
+
+            &:hover {
+                border-color: $hoverColor;
+            }
+
+            i {
+                font-size: 22px;
+                color: $white;
+            }
+        }
+    }
+
+    .search-chat {
+        padding: 0 20px;
+
+        input {
+            height: 20px;
+            width: calc(100% - 30px);
+            padding: 10px 15px;
+            font-size: 14px;
+            font-weight: 400;
+            color: $white;
+            background-color: $bgColor3;
+            border: 0;
+            border-radius: 5px;
+
+            &::placeholder {
+            font-size: 14px;
+            font-weight: 400;
+            color: $white;
+            }
+        }
+    }
+
+    .chat-list {
+        height: calc(100% - 120px);
+    }
+}

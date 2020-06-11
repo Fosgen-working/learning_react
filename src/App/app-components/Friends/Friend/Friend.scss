@@ -1,0 +1,49 @@
+@import "../../../vars";
+
+.Friend {
+    padding: 20px;
+    width: calc(100% - 40px);
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid $bgColor3;
+
+    img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+    }
+
+    .chat-description {
+        margin-left: 10px;
+        width: calc(100% - 50px);
+        height: 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-direction: column;
+
+        .name-chat {
+            width: 100%;
+            font-size: 16px;
+            font-weight: 600;
+            color: $white;
+            overflow: hidden;
+        	white-space: nowrap;
+	        text-overflow: ellipsis;
+        }
+
+        .text-chat {
+            width: 100%;
+            font-size: 14px;
+            font-weight: 400;
+            color: $white;
+            overflow: hidden;
+        	white-space: nowrap;
+	        text-overflow: ellipsis;
+        }
+    }
+}
+
+.ChatItem:last-child {
+    border: 0;
+}
