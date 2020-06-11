@@ -1,6 +1,6 @@
 @import "../../../vars";
 
-.chat-item {
+.ChatItem {
     padding: 20px;
     width: calc(100% - 40px);
     display: flex;
@@ -35,7 +35,7 @@
         .text-chat {
             width: 100%;
             font-size: 14px;
-            font-weight: 600;
+            font-weight: 400;
             color: $white;
             overflow: hidden;
         	white-space: nowrap;
@@ -44,6 +44,6 @@
     }
 }
 
-.chat-item:last-child {
+.ChatItem:last-child {
     border: 0;
 }

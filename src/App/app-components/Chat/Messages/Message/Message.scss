@@ -1,0 +1,45 @@
+@import "../../../../vars";
+
+.Message {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+
+    .sender-nickname {
+        max-width: calc(250px - 10px);
+        margin: 0 5px;
+        font-size: 16px;
+        font-weight: 600;
+        color: $white;
+        overflow: hidden;
+        white-space: nowrap;
+	    text-overflow: ellipsis;
+    }
+
+    .text-message {
+        max-width: calc(80% - 40px);
+        padding: 10px 20px;
+        background-color: $bgColor2;
+        border-radius: 5px;
+        margin: 5px 0;
+        font-size: 14px;
+        font-weight: 400;
+        color: $white;
+    }
+
+    .departure-date {
+        margin: 0 5px;
+        font-size: 12px;
+        font-weight: 400;
+        color: $white;
+        font-style: italic;
+    }
+}
+
+div.Message.from-me {
+    align-items: flex-end;
+
+    .text-message {
+        background-color: $mainColor;
+    }
+}

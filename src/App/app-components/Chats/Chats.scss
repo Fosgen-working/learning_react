@@ -39,21 +39,24 @@
     }
 
     .search-chat {
-        margin: 0 20px;
-        height: 20px;
-        width: calc(100% - 70px);
-        padding: 10px 15px;
-        font-size: 14px;
-        font-weight: 400;
-        color: $white;
-        background-color: $bgColor3;
-        border: 0;
-        border-radius: 5px;
+        padding: 0 20px;
 
-        &::placeholder {
-        font-size: 14px;
-        font-weight: 400;
-        color: $white;
+        input {
+            height: 20px;
+            width: calc(100% - 30px);
+            padding: 10px 15px;
+            font-size: 14px;
+            font-weight: 400;
+            color: $white;
+            background-color: $bgColor3;
+            border: 0;
+            border-radius: 5px;
+
+            &::placeholder {
+            font-size: 14px;
+            font-weight: 400;
+            color: $white;
+            }
         }
     }
 

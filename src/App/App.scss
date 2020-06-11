@@ -1,6 +1,6 @@
 @import "vars";
 
-.app-wrapper {
+.App {
     background-color: $bgColor;
     width: 100vw;
     height: 100vh;
@@ -22,7 +22,7 @@
         }
         .chat-room-grid-block {
             grid-area: chat;
-            padding: 30px 0;
+            padding: 30px 30px 30px 0;
         }
     }
 }
