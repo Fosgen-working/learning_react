@@ -1,0 +1,31 @@
+@import "../../../vars";
+
+.chat-item {
+    padding: 20px;
+    width: calc(100% - 40px);
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid $bgColor3;
+
+    img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+    }
+
+    .chat-description {
+        margin-left: 10px;
+        width: calc(100% - 50px);
+        height: 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-direction: column;
+
+
+    }
+}
+
+.chat-item:last-child {
+    border: 0;
+}

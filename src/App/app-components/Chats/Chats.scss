@@ -4,6 +4,7 @@
     background-color: $bgColor2;
     border-radius: 5px;
     height: 100%;
+    overflow: hidden;
 
     .sidebar-name {
         padding: 20px;
@@ -28,6 +29,30 @@
             &:hover {
                 border-color: $hoverColor;
             }
+
+            i {
+                font-size: 22px;
+                color: $white;
+            }
         }
+    }
+
+    .search-chat {
+        margin: 0 20px;
+        height: 20px;
+        width: calc(100% - 70px);
+        padding: 10px 15px;
+        font-size: 14px;
+        font-weight: 400;
+        color: $white;
+        background-color: $bgColor3;
+        border: 0;
+        border-radius: 5px;
+
+        &::placeholder {
+        font-size: 14px;
+        font-weight: 400;
+        color: $white;
+    }
     }
 }
