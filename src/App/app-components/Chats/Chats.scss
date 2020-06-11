@@ -8,6 +8,7 @@
 
     .sidebar-name {
         padding: 20px;
+        height: 40px;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -53,6 +54,10 @@
         font-size: 14px;
         font-weight: 400;
         color: $white;
+        }
     }
+
+    .chat-list {
+        height: calc(100% - 120px);
     }
 }

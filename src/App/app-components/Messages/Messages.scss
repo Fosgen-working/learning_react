@@ -1,0 +1,53 @@
+@import "../../vars";
+
+.Navbar {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    background-color: $bgColor2;
+
+    .a-up, .a-down {
+        width: 100%;
+
+        a {
+            display: flex;
+            height: 50px;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            transition: background-color 200ms ease;
+
+            &:hover {
+                background-color: $hoverColor;
+            }
+
+            i {
+                font-size: 20px;
+                color: $white;
+            }
+        }
+
+        a.user-img {
+            height: 70px;
+            background-color: $mainColor;
+            margin-bottom: 15px;
+            transition: background-color 200ms ease;
+
+            &:hover {
+                background-color: $hoverColor;
+            }
+
+            img {
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+            }
+        }
+    }
+
+    .a-down {
+        margin-bottom: 15px;
+    }
+}
