@@ -1,20 +1,20 @@
 import React from 'react';
 import './Friends.scss';
-import ChatItem from './Friend/Friend';
+import Friend from './Friend/Friend';
 
 const Friends = () => {
   return (
     <div className='Friends'>
       <div className='sidebar-name'>
-        <span>Группы</span>
-        <button type='button' name='new_chat'><i className='fas fa-comment-medical'></i></button>
+        <span>Друзья</span>
+        <button type='button' name='new_chat'><i className="fas fa-user-plus"></i></button>
       </div>
-      <form className='search-chat'>
-        <input type='text' placeholder='Поиск группы' />
+      <form className='search-friends'>
+        <input type='text' placeholder='Поиск друзей' />
       </form>
-      <div className='chat-list'>
-        <ChatItem />
-        <ChatItem />
+      <div className='friends-list'>
+        <Friend />
+        <Friend />
       </div>
     </div>
   );

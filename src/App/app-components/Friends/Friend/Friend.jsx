@@ -3,11 +3,11 @@ import './Friend.scss';
 
 const Friend = () => {
   return (
-    <div className='ChatItem'>
-      <img src='https://pbs.twimg.com/media/D7HkTV9WkAABh_c.jpg' alt='Фото группы' />
-      <div className='chat-description'>
-        <span className='name-chat'>Fosgen</span>
-        <span className='text-chat'>Вы куда все ушли, я тоже хочу выйти от сюда.</span>
+    <div className='Friend'>
+      <img src='https://pbs.twimg.com/media/D7HkTV9WkAABh_c.jpg' alt='Фото друга' />
+      <div className='friend-description'>
+        <span className='name-friend'>Fosgen</span>
+        <span className='text-friend'>Вы куда все ушли, я тоже хочу выйти от сюда.</span>
       </div>
     </div>
   );

@@ -13,7 +13,7 @@
         border-radius: 50%;
     }
 
-    .chat-description {
+    .friend-description {
         margin-left: 10px;
         width: calc(100% - 50px);
         height: 40px;
@@ -22,7 +22,7 @@
         align-items: flex-start;
         flex-direction: column;
 
-        .name-chat {
+        .name-friend {
             width: 100%;
             font-size: 16px;
             font-weight: 600;
@@ -32,7 +32,7 @@
 	        text-overflow: ellipsis;
         }
 
-        .text-chat {
+        .text-friend {
             width: 100%;
             font-size: 14px;
             font-weight: 400;
@@ -44,6 +44,6 @@
     }
 }
 
-.ChatItem:last-child {
+.Friend:last-child {
     border: 0;
 }
