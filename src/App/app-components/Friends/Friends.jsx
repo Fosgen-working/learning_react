@@ -12,9 +12,9 @@ const Friends = (props) => {
         <span>Друзья</span>
         <button type='button' name='new_chat'><i className="fas fa-user-plus"></i></button>
       </div>
-      <form className='search-friends'>
+      <div className='search-friends'>
         <input type='text' placeholder='Поиск друзей' />
-      </form>
+      </div>
       <div className='friends-list'>
         {friends}
       </div>

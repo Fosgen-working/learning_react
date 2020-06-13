@@ -20,10 +20,10 @@ const Chat = () => {
                 <Messages />
             </div>
             <div className='strip-block'></div>
-            <form className='delivery-form'>
+            <div className='delivery-form'>
                 <input type='text' placeholder='Текст сообщения' />
-                <button type="submit"><i className="fa fa-send"></i></button>
-            </form>
+                <button><i className="fa fa-send"></i></button>
+            </div>
         </div>
     );
 }
