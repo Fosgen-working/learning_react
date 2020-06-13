@@ -6,7 +6,7 @@ import Chats from './app-components/Chats/Chats';
 import Chat from './app-components/Chat/Chat';
 import Friends from './app-components/Friends/Friends';
 
-const App = () => {
+const App = (props) => {
   return (
     <BrowserRouter>
       <div className='App'>
@@ -15,11 +15,12 @@ const App = () => {
             <Navbar />
           </div>
           <div className='sidebar-grid-block'>
-            <Route path='/friends' component={Friends} />
-            <Route path='/chats' component={Chats} />
+            <Route path='/friends' render={() => <Friends friendsData={props.friendsData} />} />
+            <Route path='/chats' render={() => <Chats chatsData={props.chatsData} />} />
           </div>
           <div className='chat-room-grid-block'>
-            <Chat />
+            <Route path='/friends/1' render={() => <Chat />} />
+            <Route path='/chats/1' render={() => <Chat />} />
           </div>
         </div>
       </div>

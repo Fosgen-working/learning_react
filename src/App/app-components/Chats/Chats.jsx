@@ -2,7 +2,10 @@ import React from 'react';
 import './Chats.scss';
 import ChatItem from './ChatItem/ChatItem';
 
-const Chats = () => {
+const Chats = (props) => {
+
+  let chatItems = props.chatsData.map(chat => <ChatItem id={chat.id} name={chat.name} img={chat.img} textName={chat.textName} text={chat.text} />);
+
   return (
     <div className='Chats'>
       <div className='sidebar-name'>
@@ -13,8 +16,7 @@ const Chats = () => {
         <input type='text' placeholder='Поиск группы' />
       </form>
       <div className='chat-list'>
-        <ChatItem />
-        <ChatItem />
+        {chatItems}
       </div>
     </div>
   );

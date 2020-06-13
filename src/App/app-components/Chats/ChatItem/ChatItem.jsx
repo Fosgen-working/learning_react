@@ -1,15 +1,16 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import './ChatItem.scss';
 
-const ChatItem = () => {
+const ChatItem = (props) => {
   return (
-    <div className='ChatItem'>
-      <img src='https://pbs.twimg.com/media/D7HkTV9WkAABh_c.jpg' alt='Фото группы' />
+    <NavLink to={"/chats/" + props.id} className='ChatItem'>
+      <img src={props.img} alt='Фото группы' />
       <div className='chat-description'>
-        <span className='name-chat'>Fosgen</span>
-        <span className='text-chat'>Вы куда все ушли, я тоже хочу выйти от сюда.</span>
+        <span className='name-chat'>{props.name}</span>
+        <span className='text-chat'>{props.textName} : {props.text}</span>
       </div>
-    </div>
+    </NavLink>
   );
 }
 

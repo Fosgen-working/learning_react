@@ -1,15 +1,16 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import './Friend.scss';
 
-const Friend = () => {
+const Friend = (props) => {
   return (
-    <div className='Friend'>
-      <img src='https://pbs.twimg.com/media/D7HkTV9WkAABh_c.jpg' alt='Фото друга' />
+    <NavLink to={"/friends/" + props.id} className='Friend'>
+      <img src={props.img} alt='Фото друга' />
       <div className='friend-description'>
-        <span className='name-friend'>Fosgen</span>
-        <span className='text-friend'>Вы куда все ушли, я тоже хочу выйти от сюда.</span>
+        <span className='name-friend'>{props.name}</span>
+        <span className='text-friend'>{props.textName} : {props.text}</span>
       </div>
-    </div>
+    </NavLink>
   );
 }
 

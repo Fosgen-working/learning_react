@@ -2,7 +2,10 @@ import React from 'react';
 import './Friends.scss';
 import Friend from './Friend/Friend';
 
-const Friends = () => {
+const Friends = (props) => {
+
+  let friends = props.friendsData.map(friend => <Friend id={friend.id} name={friend.name} img={friend.img} textName={friend.textName} text={friend.text} />);
+
   return (
     <div className='Friends'>
       <div className='sidebar-name'>
@@ -13,8 +16,7 @@ const Friends = () => {
         <input type='text' placeholder='Поиск друзей' />
       </form>
       <div className='friends-list'>
-        <Friend />
-        <Friend />
+        {friends}
       </div>
     </div>
   );
