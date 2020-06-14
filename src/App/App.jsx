@@ -7,6 +7,8 @@ import Chat from './app-components/Chat/Chat';
 import Friends from './app-components/Friends/Friends';
 
 const App = (props) => {
+
+
   return (
     <BrowserRouter>
       <div className='App'>
@@ -15,8 +17,8 @@ const App = (props) => {
             <Navbar />
           </div>
           <div className='sidebar-grid-block'>
-            <Route path='/friends' render={() => <Friends friendsData={props.friendsData} />} />
-            <Route path='/chats' render={() => <Chats chatsData={props.chatsData} />} />
+            <Route path='/friends' render={() => <Friends friendsData={props.state.friends} usresData={props.state.users} />} />
+            <Route path='/chats' render={() => <Chats chatsData={props.state.chats} usresData={props.state.users} />} />
           </div>
           <div className='chat-room-grid-block'>
             <Route path='/friends/1' render={() => <Chat />} />
