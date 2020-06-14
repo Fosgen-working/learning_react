@@ -4,8 +4,11 @@ import Friend from './Friend/Friend';
 
 const Friends = (props) => {
 
-  let friends = props.friendsData.map(friend => <Friend id={friend.id} name={friend.name} img={friend.img} textName={friend.textName} text={friend.text} />);
-
+  let friends = props.friendsData.map(friend => {
+    let lastElement = friend.messages.length - 1;
+    let lastUser = props.usresData.find(item => item.id === chat.messages[lastElement].idUser);
+    return <Friend id={friend.id} name={friend.name} img={friend.img} textName={friend.textName} text={friend.text} />
+  });
   return (
     <div className='Friends'>
       <div className='sidebar-name'>
