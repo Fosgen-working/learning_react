@@ -1,19 +1,19 @@
 import React from 'react';
-import './Chat.scss';
+import './ChatFriend.scss';
 import Messages from './Messages/Messages';
 
-const Chat = (props) => {
+const ChatFriend = (props) => {
 
 
 
     return (
-        <div className='Chat'>
+        <div className='ChatFriend'>
             <div className='header-chat'>
                 <div className='interlocutor'>
-                    <img src={props.chatData.img} alt="Фото группы" />
+                    <img src="https://pbs.twimg.com/media/D7HkTV9WkAABh_c.jpg" alt="Фото собеседника" />
                     <div className='description-interlocutor'>
-                        <span className='name-interlocutor'>{props.chatData.name}</span>
-                        <span className='status-interlocutor'>Участников: {props.chatData.idUsers.length}</span>
+                        <span className='name-interlocutor'>Fosgen</span>
+                        <span className='status-interlocutor'>Offline</span>
                     </div>
                 </div>
                 <button type="button" name="options_chat"><i className="fas fa-ellipsis-h"></i></button>
@@ -31,4 +31,4 @@ const Chat = (props) => {
     );
 }
 
-export default Chat;
+export default ChatFriend;

@@ -6,8 +6,16 @@ const Friends = (props) => {
 
   let friends = props.friendsData.map(friend => {
     let lastElement = friend.messages.length - 1;
-    let lastUser = props.usresData.find(item => item.id === chat.messages[lastElement].idUser);
-    return <Friend id={friend.id} name={friend.name} img={friend.img} textName={friend.textName} text={friend.text} />
+    let friendId;
+    for (let id of friend.idUsers) {
+      if (id !== props.myId) {
+        friendId = id;
+        break;
+      }
+    }
+    let friendInfo = props.usresData.find(item => item.id === friendId);
+    let lastUser = props.usresData.find(item => item.id === friend.messages[lastElement].idUser);
+    return <Friend id={friend.id} name={friendInfo.name} img={friendInfo.img} textName={lastUser.name} text={friend.messages[lastElement].message} />;
   });
   return (
     <div className='Friends'>

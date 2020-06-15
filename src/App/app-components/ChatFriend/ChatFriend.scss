@@ -1,0 +1,122 @@
+@import "../../vars";
+
+.ChatFriend {
+    height: 100%;
+
+    .header-chat {
+        height: 70px;
+        display: flex;
+        justify-content: space-between;
+
+        .interlocutor {
+            width: 200px;
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            img {
+                width: 70px;
+                height: 70px;
+                border-radius: 50%;
+            }
+
+            .description-interlocutor {
+                margin-left: 10px;
+                width: calc(100% - 80px);
+                height: 40px;
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+                flex-direction: column;
+
+                .name-interlocutor {
+                    width: 100%;
+                    font-size: 16px;
+                    font-weight: 600;
+                    color: $white;
+                    overflow: hidden;
+        	        white-space: nowrap;
+	                text-overflow: ellipsis;
+                }
+
+                .status-interlocutor {
+                    font-size: 11px;
+                    font-weight: 400;
+                    color: $white;
+                }
+            }
+        }
+
+        button {
+            width: 50px;
+            height: 40px;
+            border: 2px solid $bgColor;
+            border-radius: 5px;
+            background-color: $bgColor3;
+            transition: border-color 200ms ease;
+
+            &:hover {
+                border-color: $hoverColor;
+            }
+
+            i {
+                font-size: 22px;
+                color: $white;
+            }
+        }
+    }
+
+    .strip-block {
+        height: 2px;
+        margin: 20px 0;
+        background-color: $bgColor2;
+    }
+
+    .messages-block {
+        height: calc(100% - 214px);
+    }
+
+    .delivery-form {
+        padding: 10px;
+        height: 40px;
+        border-radius: 5px;
+        background-color: $bgColor2;
+
+        input {
+            padding: 5px 10px;
+            height: 30px;
+            border: 0;
+            width: calc(100% - 60px);
+            background-color: $bgColor2;
+            font-size: 14px;
+            font-weight: 400;
+            color: $white;
+
+            &::placeholder {
+            font-size: 14px;
+            font-weight: 400;
+            color: $white;
+            }
+        }
+
+        button {
+            width: 40px;
+            height: 40px;
+            border: 2px solid $bgColor2;
+            border-radius: 50%;
+            background-color: $mainColor;
+            transition: border-color 200ms ease;
+
+            &:hover {
+                border-color: $hoverColor;
+            }
+
+            i {
+                font-size: 15px;
+                color: $white;
+                margin-right: 3px;
+            }
+        }
+    }
+}

@@ -7,7 +7,7 @@ const Chats = (props) => {
   let chatItems = props.chatsData.map(chat => {
     let lastElement = chat.messages.length - 1;
     let lastUser = props.usresData.find(item => item.id === chat.messages[lastElement].idUser);
-    return <ChatItem id={chat.id} name={chat.name} img={chat.img} textName={lastUser.name} text={chat.messages[lastElement].message} />
+    return <ChatItem id={chat.id} name={chat.name} img={chat.img} textName={lastUser.name} text={chat.messages[lastElement].message} />;
   });
 
   return (
