@@ -4,7 +4,7 @@ import Messages from './Messages/Messages';
 
 const Chat = (props) => {
 
-
+    let usersInfo = props.chatData.idUsers.map(userId => props.usresData.find(user => user.id === userId));
 
     return (
         <div className='Chat'>
@@ -20,7 +20,7 @@ const Chat = (props) => {
             </div>
             <div className='strip-block'></div>
             <div className='messages-block'>
-                <Messages />
+                <Messages usresData={usersInfo} messages={props.chatData.messages} myId={props.myId} />
             </div>
             <div className='strip-block'></div>
             <div className='delivery-form'>

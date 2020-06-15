@@ -1,11 +1,11 @@
 import React from 'react';
 import './Message.scss';
 
-const Message = () => {
+const Message = (props) => {
     return (
-        <div className='Message from-me'>
-            <p className='sender-nickname'>Fosgen</p>
-            <p className='text-message'>Thank you so much. After I review these files, I will give you my opinion. If there's a problem, you can send it back. Good luck with!</p>
+        <div className={'Message ' + props.classFlex}>
+            <p className='sender-nickname'>{props.name}</p>
+            <p className='text-message'>{props.text}</p>
             <span className='departure-date'>17:53</span>
         </div>
     );

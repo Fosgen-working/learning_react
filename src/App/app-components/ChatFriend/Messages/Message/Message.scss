@@ -36,10 +36,15 @@
     }
 }
 
-div.Message.from-me {
+div.Message.right-flex {
     align-items: flex-end;
 
     .text-message {
         background-color: $mainColor;
     }
+}
+
+div.Message.left-flex {
+    align-items: flex-start;
+
 }
