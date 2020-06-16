@@ -1,3 +1,5 @@
+import { rerenderEntireTree } from '../render';
+
 let state = {
     users: [
         { id: 1, name: 'Fosgen', img: 'https://www.meme-arsenal.com/memes/b877babd9c07f94b952c7f152c4e264e.jpg', password: 6966 },
@@ -20,7 +22,23 @@ let state = {
         { id: 4, idUsers: [4, 5], messages: [{ id: 1, idUser: 5, message: 'Привет я в автобусе' }] },
         { id: 5, idUsers: [5, 6], messages: [{ id: 1, idUser: 5, message: 'Привет я в автобусе' }] },
         { id: 6, idUsers: [1, 6], messages: [{ id: 1, idUser: 1, message: 'Привет я в автобусе' }] }
-    ]
+    ],
+    newFriendMessageText: ""
 };
+
+export let addFriendMessage = (textMessage, idChat) => {
+    let newMessage = {
+        id: 10,
+        idUser: 1,
+        message: textMessage
+    };
+    state.friends[idChat - 1].messages.push(newMessage);
+    rerenderEntireTree(state);
+}
+
+export let updateFriendMessageText = (newText) => {
+    state.newFriendMessageText = newText;
+    rerenderEntireTree(state);
+}
 
 export default state;

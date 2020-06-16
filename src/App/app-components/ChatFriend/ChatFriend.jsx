@@ -13,6 +13,16 @@ const ChatFriend = (props) => {
     }
     let friendInfo = props.usresData.find(item => item.id === friendId);
 
+    let newFriendMessage = React.createRef();
+
+    let addFriendMessage = () => {
+        props.addFriendMessage(newFriendMessage.current.value, props.chatData.id);
+    }
+
+    let onFriendMessageChange = () => {
+        props.updateFriendMessageText(newFriendMessage.current.value)
+    }
+
     return (
         <div className='ChatFriend'>
             <div className='header-chat'>
@@ -31,8 +41,8 @@ const ChatFriend = (props) => {
             </div>
             <div className='strip-block'></div>
             <div className='delivery-form'>
-                <input type='text' placeholder='Текст сообщения' />
-                <button><i className="fa fa-send"></i></button>
+                <input onChange={onFriendMessageChange} ref={newFriendMessage} value={props.newFriendMessageText} placeholder='Текст сообщения' />
+                <button onClick={addFriendMessage}><i className="fa fa-send"></i></button>
             </div>
         </div>
     );

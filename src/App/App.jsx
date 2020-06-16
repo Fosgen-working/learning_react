@@ -11,8 +11,8 @@ const App = (props) => {
 
   let myId = 1;
 
-  let chatLinksChats = props.state.chats.map(chat => <Route path={'/chats/' + chat.id} render={() => <Chat chatData={chat} usresData={props.state.users} myId={myId} />} />);
-  let chatLinksFriends = props.state.friends.map(chat => <Route path={'/friends/' + chat.id} render={() => <ChatFriend chatData={chat} usresData={props.state.users} myId={myId} />} />);
+  let chatLinksChats = props.state.chats.map(chat => <Route path={'/chats/' + chat.id} render={() => <Chat chatData={chat} usresData={props.state.users} myId={myId} addFriendMessage={props.addFriendMessage} newFriendMessageText={props.state.newFriendMessageText} updateFriendMessageText={props.updateFriendMessageText} />} />);
+  let chatLinksFriends = props.state.friends.map(chat => <Route path={'/friends/' + chat.id} render={() => <ChatFriend chatData={chat} usresData={props.state.users} myId={myId} addFriendMessage={props.addFriendMessage} newFriendMessageText={props.state.newFriendMessageText} updateFriendMessageText={props.updateFriendMessageText} />} />);
 
   return (
     <BrowserRouter>
