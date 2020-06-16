@@ -4,15 +4,22 @@ import Messages from './Messages/Messages';
 
 const ChatFriend = (props) => {
 
-
+    let friendId;
+    for (let id of props.chatData.idUsers) {
+        if (id !== props.myId) {
+            friendId = id;
+            break;
+        }
+    }
+    let friendInfo = props.usresData.find(item => item.id === friendId);
 
     return (
         <div className='ChatFriend'>
             <div className='header-chat'>
                 <div className='interlocutor'>
-                    <img src="https://pbs.twimg.com/media/D7HkTV9WkAABh_c.jpg" alt="Фото собеседника" />
+                    <img src={friendInfo.img} alt="Фото собеседника" />
                     <div className='description-interlocutor'>
-                        <span className='name-interlocutor'>Fosgen</span>
+                        <span className='name-interlocutor'>{friendInfo.name}</span>
                         <span className='status-interlocutor'>Offline</span>
                     </div>
                 </div>
@@ -20,7 +27,7 @@ const ChatFriend = (props) => {
             </div>
             <div className='strip-block'></div>
             <div className='messages-block'>
-                <Messages />
+                <Messages friendInfo={friendInfo} messages={props.chatData.messages} myId={props.myId} />
             </div>
             <div className='strip-block'></div>
             <div className='delivery-form'>

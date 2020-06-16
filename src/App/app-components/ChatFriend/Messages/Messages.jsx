@@ -6,12 +6,14 @@ const Messages = (props) => {
 
     let messageItem = props.messages.map(item => {
         let classFlex = 'left-flex';
-        let userInfo = props.usresData.find(user => user.id === item.idUser)
-        if (userInfo.id === props.myId) {
-            userInfo.name = 'Вы';
+        let userName;
+        if (item.idUser === props.myId) {
+            userName = 'Вы';
             classFlex = 'right-flex';
+        } else {
+            userName = props.friendInfo.name;
         }
-        return <Message text={item.message} img={userInfo.img} name={userInfo.name} classFlex={classFlex} />;
+        return <Message text={item.message} name={userName} classFlex={classFlex} />;
     });
 
     return (
