@@ -16,7 +16,7 @@ const ChatFriend = (props) => {
     let newFriendMessage = React.createRef();
 
     let addFriendMessage = () => {
-        props.addFriendMessage(newFriendMessage.current.value, props.chatData.id);
+        props.addFriendMessage(props.chatData.id);
     }
 
     let onFriendMessageChange = () => {

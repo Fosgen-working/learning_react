@@ -1,4 +1,6 @@
-import { rerenderEntireTree } from '../render';
+let rerenderEntireTree = () => {
+
+}
 
 let state = {
     users: [
@@ -26,19 +28,25 @@ let state = {
     newFriendMessageText: ""
 };
 
-export let addFriendMessage = (textMessage, idChat) => {
+window.state = state;
+
+export const addFriendMessage = (idChat) => {
     let newMessage = {
         id: 10,
         idUser: 1,
-        message: textMessage
+        message: state.newFriendMessageText
     };
     state.friends[idChat - 1].messages.push(newMessage);
-    rerenderEntireTree(state);
+    updateFriendMessageText('');
 }
 
-export let updateFriendMessageText = (newText) => {
+export const updateFriendMessageText = (newText) => {
     state.newFriendMessageText = newText;
-    rerenderEntireTree(state);
+    rerenderEntireTree();
+}
+
+export const subscribr = (observer) => {
+    rerenderEntireTree = observer;
 }
 
 export default state;
