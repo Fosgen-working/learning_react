@@ -11,8 +11,8 @@ const App = (props) => {
 
   let myId = 1;
 
-  let chatLinksChats = props.state.chats.map(chat => <Route path={'/chats/' + chat.id} render={() => <Chat chatData={chat} usresData={props.state.users} myId={myId} addFriendMessage={props.addFriendMessage} newFriendMessageText={props.state.newFriendMessageText} updateFriendMessageText={props.updateFriendMessageText} />} />);
-  let chatLinksFriends = props.state.friends.map(chat => <Route path={'/friends/' + chat.id} render={() => <ChatFriend chatData={chat} usresData={props.state.users} myId={myId} addFriendMessage={props.addFriendMessage} newFriendMessageText={props.state.newFriendMessageText} updateFriendMessageText={props.updateFriendMessageText} />} />);
+  let chatLinksChats = props.store.getState().chats.map(chat => <Route path={'/chats/' + chat.id} render={() => <Chat chatData={chat} usresData={props.store.getState().users} myId={myId} />} />);
+  let chatLinksFriends = props.store.getState().friendsPage.friends.map(chat => <Route path={'/friends/' + chat.id} render={() => <ChatFriend chatData={chat} usresData={props.store.getState().users} myId={myId} store={props.store} />} />);
 
   return (
     <BrowserRouter>
@@ -22,8 +22,8 @@ const App = (props) => {
             <Navbar />
           </div>
           <div className='sidebar-grid-block'>
-            <Route path='/friends' render={() => <Friends friendsData={props.state.friends} usresData={props.state.users} myId={myId} />} />
-            <Route path='/chats' render={() => <Chats chatsData={props.state.chats} usresData={props.state.users} />} />
+            <Route path='/friends' render={() => <Friends friendsData={props.store.getState().friendsPage.friends} usresData={props.store.getState().users} myId={myId} />} />
+            <Route path='/chats' render={() => <Chats chatsData={props.store.getState().chats} usresData={props.store.getState().users} />} />
           </div>
           <div className='chat-room-grid-block'>
             {chatLinksChats}

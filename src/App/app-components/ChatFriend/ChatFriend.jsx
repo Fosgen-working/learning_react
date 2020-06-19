@@ -16,11 +16,11 @@ const ChatFriend = (props) => {
     let newFriendMessage = React.createRef();
 
     let addFriendMessage = () => {
-        props.addFriendMessage(props.chatData.id);
+        props.store.dispatch({ type: 'ADD_FRIEND_MESSAGE', idChat: props.chatData.id });
     }
 
     let onFriendMessageChange = () => {
-        props.updateFriendMessageText(newFriendMessage.current.value)
+        props.store.dispatch({ type: 'UPDATE_FRIEND_MESSAGE_TEXT', newText: newFriendMessage.current.value });
     }
 
     return (
@@ -41,7 +41,7 @@ const ChatFriend = (props) => {
             </div>
             <div className='strip-block'></div>
             <div className='delivery-form'>
-                <input onChange={onFriendMessageChange} ref={newFriendMessage} value={props.newFriendMessageText} placeholder='Текст сообщения' />
+                <input onChange={onFriendMessageChange} ref={newFriendMessage} value={props.store.getState().friendsPage.newFriendMessageText} placeholder='Текст сообщения' />
                 <button onClick={addFriendMessage}><i className="fa fa-send"></i></button>
             </div>
         </div>
