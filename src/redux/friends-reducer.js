@@ -21,11 +21,16 @@ const friendsReducer = (state = initialState, action) => {
                 idUser: 1,
                 message: state.newFriendMessageText
             };
-            return {
-                ...state,
-                friends[action.idChat - 1].messages: [...state.friends[action.idChat - 1].messages, newMessage],
-                newFriendMessageText: ''
-            };
+            let stateCpoy = { ...state };
+            stateCpoy.friends[action.idChat - 1].messages = [stateCpoy.friends[action.idChat - 1].messages, newMessage]
+
+            return stateCpoy;
+
+        // {
+        //     ...state,
+        //     friends[action.idChat - 1].messages: [...state.friends[action.idChat - 1].messages, newMessage],
+        //     newFriendMessageText: ''
+        // };
         case UPDATE_FRIEND_MESSAGE_TEXT:
             return {
                 ...state,
