@@ -16,21 +16,30 @@ let initialState = {
 const friendsReducer = (state = initialState, action) => {
     switch (action.type) {
         case ADD_FRIEND_MESSAGE:
-            let newMessage = {
-                id: 10,
-                idUser: 1,
-                message: state.newFriendMessageText
-            };
-            let stateCpoy = { ...state };
-            stateCpoy.friends[action.idChat - 1].messages = [stateCpoy.friends[action.idChat - 1].messages, newMessage]
+            if (state.newFriendMessageText !== '') {
+                let newMessage = {
+                    id: 10,
+                    idUser: 1,
+                    message: state.newFriendMessageText
+                };
 
-            return stateCpoy;
+                return {
+                    ...state,
+                    friends: state.friends.map(friend => {
+                        if (friend.id === action.idChat) {
+                            return {
+                                ...friend,
+                                messages: [...friend.messages, newMessage]
+                            }
+                        }
+                        return friend;
+                    }),
+                    newFriendMessageText: ''
+                };
+            } else {
+                return state;
+            }
 
-        // {
-        //     ...state,
-        //     friends[action.idChat - 1].messages: [...state.friends[action.idChat - 1].messages, newMessage],
-        //     newFriendMessageText: ''
-        // };
         case UPDATE_FRIEND_MESSAGE_TEXT:
             return {
                 ...state,

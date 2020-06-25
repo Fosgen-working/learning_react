@@ -4,32 +4,15 @@ import Messages from './Messages/Messages';
 
 const ChatFriend = (props) => {
 
-    let friendId;
-    for (let id of props.chatData.idUsers) {
-        if (id !== props.myId) {
-            friendId = id;
-            break;
-        }
-    }
-    let friendInfo = props.usresData.find(item => item.id === friendId);
-
     let newFriendMessage = React.createRef();
-
-    let addFriendMessage = () => {
-        props.store.dispatch({ type: 'ADD_FRIEND_MESSAGE', idChat: props.chatData.id });
-    }
-
-    let onFriendMessageChange = () => {
-        props.store.dispatch({ type: 'UPDATE_FRIEND_MESSAGE_TEXT', newText: newFriendMessage.current.value });
-    }
 
     return (
         <div className='ChatFriend'>
             <div className='header-chat'>
                 <div className='interlocutor'>
-                    <img src={friendInfo.img} alt="Фото собеседника" />
+                    <img src={props.friendInfo.img} alt="Фото собеседника" />
                     <div className='description-interlocutor'>
-                        <span className='name-interlocutor'>{friendInfo.name}</span>
+                        <span className='name-interlocutor'>{props.friendInfo.name}</span>
                         <span className='status-interlocutor'>Offline</span>
                     </div>
                 </div>
@@ -37,12 +20,12 @@ const ChatFriend = (props) => {
             </div>
             <div className='strip-block'></div>
             <div className='messages-block'>
-                <Messages friendInfo={friendInfo} messages={props.chatData.messages} myId={props.myId} />
+                <Messages friendInfo={props.friendInfo} messages={props.chatData.messages} myId={props.myId} />
             </div>
             <div className='strip-block'></div>
             <div className='delivery-form'>
-                <input onChange={onFriendMessageChange} ref={newFriendMessage} value={props.store.getState().friendsPage.newFriendMessageText} placeholder='Текст сообщения' />
-                <button onClick={addFriendMessage}><i className="fa fa-send"></i></button>
+                <input onChange={() => { props.updateMessage(newFriendMessage.current.value) }} ref={newFriendMessage} value={props.inputValue} placeholder='Текст сообщения' />
+                <button onClick={() => { if (props.inputValue !== '') { props.addMessage(props.chatData.id) } }}><i className="fa fa-send"></i></button>
             </div>
         </div>
     );
