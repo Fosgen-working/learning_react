@@ -5,7 +5,7 @@ import usersReducer from "./users-reducer";
 
 let reducers = combineReducers({
     friendsPage: friendsReducer,
-    chats: chatsReducer,
+    chatsPage: chatsReducer,
     users: usersReducer
 });
 

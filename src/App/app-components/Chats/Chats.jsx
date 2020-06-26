@@ -1,14 +1,7 @@
 import React from 'react';
 import './Chats.scss';
-import ChatItem from './ChatItem/ChatItem';
 
 const Chats = (props) => {
-
-  let chatItems = props.chatsData.map(chat => {
-    let lastElement = chat.messages.length - 1;
-    let lastUser = props.usresData.find(item => item.id === chat.messages[lastElement].idUser);
-    return <ChatItem id={chat.id} name={chat.name} img={chat.img} textName={lastUser.name} text={chat.messages[lastElement].message} />;
-  });
 
   return (
     <div className='Chats'>
@@ -20,7 +13,7 @@ const Chats = (props) => {
         <input type='text' placeholder='Поиск группы' />
       </div>
       <div className='chat-list'>
-        {chatItems}
+        {props.chatItems}
       </div>
     </div>
   );

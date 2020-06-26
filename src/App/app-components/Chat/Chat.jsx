@@ -4,7 +4,7 @@ import Messages from './Messages/Messages';
 
 const Chat = (props) => {
 
-    let usersInfo = props.chatData.idUsers.map(userId => props.usresData.find(user => user.id === userId));
+    let newChatMessage = React.createRef();
 
     return (
         <div className='Chat'>
@@ -20,12 +20,12 @@ const Chat = (props) => {
             </div>
             <div className='strip-block'></div>
             <div className='messages-block'>
-                <Messages usresData={usersInfo} messages={props.chatData.messages} myId={props.myId} />
+                <Messages usresData={props.usersInfo} messages={props.chatData.messages} myId={props.myId} />
             </div>
             <div className='strip-block'></div>
             <div className='delivery-form'>
-                <input type='text' placeholder='Текст сообщения' />
-                <button><i className="fa fa-send"></i></button>
+                <input onChange={() => { props.updateMessage(newChatMessage.current.value, props.chatData.id) }} ref={newChatMessage} value={props.inputValue} placeholder='Текст сообщения' />
+                <button onClick={() => { if (props.inputValue !== '') { props.addMessage(props.chatData.id) } }}><i className="fa fa-send"></i></button>
             </div>
         </div>
     );

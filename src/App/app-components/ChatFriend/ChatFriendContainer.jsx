@@ -20,9 +20,9 @@ const mapStateToProps = (state, ownProps) => {
         chatData: ownProps.chatData,
         myId: ownProps.myId,
         friendInfo: necessaryFriendInfo(state, ownProps),
-        inputValue: state.friendsPage.newFriendMessageText
+        inputValue: ownProps.chatData.newFriendMessageText
 
-    }
+    };
 };
 
 const mapDispatchToProps = (dispatch) => {
@@ -30,10 +30,10 @@ const mapDispatchToProps = (dispatch) => {
         addMessage: (id) => {
             dispatch(addFriendMessageCreator(id));
         },
-        updateMessage: (text) => {
-            dispatch(updateFriendMessageCreator(text));
+        updateMessage: (text, id) => {
+            dispatch(updateFriendMessageCreator(text, id));
         }
-    }
+    };
 };
 
 

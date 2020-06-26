@@ -1,22 +1,8 @@
 import React from 'react';
 import './Friends.scss';
-import Friend from './Friend/Friend';
 
 const Friends = (props) => {
 
-  let friends = props.friendsData.map(friend => {
-    let lastElement = friend.messages.length - 1;
-    let friendId;
-    for (let id of friend.idUsers) {
-      if (id !== props.myId) {
-        friendId = id;
-        break;
-      }
-    }
-    let friendInfo = props.usresData.find(item => item.id === friendId);
-    let lastUser = props.usresData.find(item => item.id === friend.messages[lastElement].idUser);
-    return <Friend id={friend.id} name={friendInfo.name} img={friendInfo.img} textName={lastUser.name} text={friend.messages[lastElement].message} />;
-  });
   return (
     <div className='Friends'>
       <div className='sidebar-name'>
@@ -27,7 +13,7 @@ const Friends = (props) => {
         <input type='text' placeholder='Поиск друзей' />
       </div>
       <div className='friends-list'>
-        {friends}
+        {props.friends}
       </div>
     </div>
   );

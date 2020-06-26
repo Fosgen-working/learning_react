@@ -6,7 +6,7 @@ const Messages = (props) => {
 
     let messageItem = props.messages.map(item => {
         let classFlex = 'left-flex';
-        let userInfo = props.usresData.find(user => user.id === item.idUser)
+        let userInfo = props.usresData.find(user => user.id === item.idUser);
         if (userInfo.id === props.myId) {
             userInfo.name = 'Вы';
             classFlex = 'right-flex';

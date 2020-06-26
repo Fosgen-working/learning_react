@@ -24,7 +24,7 @@ const ChatFriend = (props) => {
             </div>
             <div className='strip-block'></div>
             <div className='delivery-form'>
-                <input onChange={() => { props.updateMessage(newFriendMessage.current.value) }} ref={newFriendMessage} value={props.inputValue} placeholder='Текст сообщения' />
+                <input onChange={() => { props.updateMessage(newFriendMessage.current.value, props.chatData.id) }} ref={newFriendMessage} value={props.inputValue} placeholder='Текст сообщения' />
                 <button onClick={() => { if (props.inputValue !== '') { props.addMessage(props.chatData.id) } }}><i className="fa fa-send"></i></button>
             </div>
         </div>

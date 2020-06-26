@@ -5,7 +5,7 @@ import App from './App';
 let mapStateToProps = (state) => {
     return {
         friends: state.friendsPage.friends,
-        chats: state.chats
+        chats: state.chatsPage.chats
     };
 };
 
