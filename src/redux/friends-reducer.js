@@ -36,7 +36,8 @@ const friendsReducer = (state = initialState, action) => {
                         return friend;
                     })
                 };
-            } else {
+            }
+            else {
                 return state;
             }
         case UPDATE_FRIEND_MESSAGE_TEXT:

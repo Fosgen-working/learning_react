@@ -34,7 +34,8 @@ const chatsReducer = (state = initialState, action) => {
                         return chat;
                     })
                 };
-            } else {
+            }
+            else {
                 return state;
             }
         case UPDATE_CHAT_MESSAGE_TEXT:

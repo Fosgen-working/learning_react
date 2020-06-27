@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import Chat from './Chat';
 import { updateChatMessageCreator, addChatMessageCreator } from '../../../redux/chats-reducer';
 
-
 const necessaryUsersInfo = (state, ownProps) => {
     let users = state.users.filter(user => {
         for (let id of ownProps.chatData.idUsers) {
@@ -35,7 +34,5 @@ const mapDispatchToProps = (dispatch) => {
         }
     };
 };
-
-
 
 export default connect(mapStateToProps, mapDispatchToProps)(Chat);
